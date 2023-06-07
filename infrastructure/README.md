@@ -6,9 +6,29 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+- `npm run build` compile typescript to js
+- `npm run watch` watch for changes and compile
+- `npm run test` perform the jest unit tests
+- `cdk deploy` deploy this stack to your default AWS account/region
+- `cdk diff` compare deployed stack with current state
+- `cdk synth` emits the synthesized CloudFormation template
+
+### **Working with workspaces**
+
+#### **adding dependency within a specific workspace**
+
+```
+yarn workspaces <workspace name> add <package name>
+```
+
+#### **adding a dev edependency within a specific workspace**
+
+```
+yarn workspace <workspace name> add <package name> -D
+```
+
+### **adding a dependency to the root of the monorepo (must be in the root directory)**
+
+```
+yarn add <package name > -W
+```
