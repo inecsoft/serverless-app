@@ -15,14 +15,20 @@ export class AssetStorage extends Construct {
 
     this.uploadBucket = new s3.Bucket(this, 'UploadBucket', {
       encryption: s3.BucketEncryption.S3_MANAGED,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     this.assetBucket = new s3.Bucket(this, 'AssetBucket', {
       encryption: s3.BucketEncryption.S3_MANAGED,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
 
     this.hostingBucket = new s3.Bucket(this, 'WebHostingBucket', {
       encryption: s3.BucketEncryption.S3_MANAGED,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
   }
 }

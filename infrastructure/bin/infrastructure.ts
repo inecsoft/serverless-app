@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import { InfrastructureStack } from '../lib/core/infrastructure-stack';
 
 const app = new cdk.App();
-new InfrastructureStack(app, 'InfrastructureStack', {
+const stack = new InfrastructureStack(app, 'InfrastructureStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -17,3 +17,6 @@ new InfrastructureStack(app, 'InfrastructureStack', {
   // env: { account: '123456789012', region: 'us-east-1' },
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
+
+cdk.Tags.of(stack).add('Environment', 'Dev');
+cdk.Tags.of(stack).add('IaC', 'CDK');
